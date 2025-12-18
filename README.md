@@ -1,11 +1,18 @@
 ---
-
 title: "RELAZIONE TECNICA"
 author: "Massimo Padalino"
 date: "A.S 2025-2026"
 toc: true
 toc-depth: 2
-------------
+header-includes: |
+    \usepackage{fancyhdr}
+    \usepackage{lastpage}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \rhead{Progetto Informatica – Fase 1}
+    \lhead{Eccessolandia}
+    \cfoot{\footnotesize Stampato il: \today \quad | \quad Pagina \thepage\ di \pageref{LastPage}}
+---
 
 # Progetto Informatica – Fase 1
 
@@ -705,7 +712,7 @@ Per la tabella che gestisce lo storico delle visualizzazioni (`PONTEVISIONA`), �
 La scelta di includere la data nella chiave è cruciale per permettere  il rewatch. Se la chiave fosse stata composta solo da Utente e Film, il sistema avrebbe impedito di salvare due volte lo stesso contenuto per la stessa persona. Invece aggiungendo la data, rendiamo unica la combinazione chi cosa e quando, permettendo il rewatch.
 
 * Gestione abbonamento:
-I dettagli degli abbonemnti disponibili sono inseriti nella tabella `TIPO_ABBONAMENTO`, mentre la tabella  `ABBONAMENTO` serve per contenere i dati specifici di quella sottoscrizione dell'utente come ad esempio data e metodo di pagamento. Ovviamente un utente può avere uno e un solo abbonamento attivo alla volta, e questo è gestito tramite la chiave esterna FKID_Abbonamento nella tabella `UTENTE`.
+I dettagli degli abbonemnti disponibili sono inseriti nella tabella `TIPO_ABBONAMENTO`, mentre la tabella  `ABBONAMENTO` serve per contenere i dati specifici di quella sottoscrizione dell'utente come ad esempio data di sottoscrizione e metodo di pagamento. Ovviamente un utente può avere uno e un solo abbonamento attivo alla volta, e questo è gestito tramite la chiave esterna FKID_Abbonamento nella tabella `UTENTE`.
 
 * Gestione liste:
 La tabella `LISTA` collegano direttamente l'`ACCOUNT` al `CONTENUTO`. Questa scelta  assicura che la watchlist o i preferiti (gestiti con il campo 'tipo') siano specifici per ogni profilo. è stato scelto ID_Lista invece di usare account + contenuto + tipo come chiave solo per avere un indicizzazione più snella.
@@ -716,6 +723,4 @@ La tabella `LISTA` collegano direttamente l'`ACCOUNT` al `CONTENUTO`. Questa sce
 
     * ENUM: Utilizzato per campi come ad esempio "tipo" e "tipoAcc" per vincolare i valori a quelli previsti.
 
-
-
-_*Fine!*_
+Fine!
