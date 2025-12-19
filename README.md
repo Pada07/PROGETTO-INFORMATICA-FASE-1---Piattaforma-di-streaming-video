@@ -34,10 +34,6 @@ Quanto segue è la prima fase di un progetto che prevede la realizzazione di un'
 Diagramma con mermaid
 
 ```mermaid
-
-<!--Spiegazione a livello concettuale di tutte le entità con rispettivi attributi e delle relazioni tra di esse al fine di raggiungere il prodotto richiesto ( _Intrduzione al progetto_ ) -->
-
-
 erDiagram
     UTENTE {
         varchar ID_Utente PK
@@ -476,6 +472,7 @@ La tabella `LISTA` collegano direttamente l'`ACCOUNT` al `CONTENUTO`. Questa sce
 
 ## 7. Conclusioni
 In conclusione abbiamo ottenuto la realizzazione completa del diagramma E-R, schema logico e script sql con le relative spiegazioni ed analisi. Nel futuro si potrebbe allargare il concetto del progetto ad una realizzazione finale dell'applicazione web inizialmente idealizzata.
+
 
 
 
