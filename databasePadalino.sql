@@ -1,17 +1,17 @@
 CREATE TABLE GENERE (
-    ID_Genere varchar(10) PRIMARY KEY,
+    ID_Genere int(2) unsigned zero fill auto-increment PRIMARY KEY,
     nome varchar(15) NOT NULL
 );
 
 CREATE TABLE PERSONA (
-    ID_Persona varchar(10) PRIMARY KEY,
+    ID_Persona int(4) unsigned zero fill auto-increment PRIMARY KEY,
     nome varchar(15) NOT NULL,
     cognome varchar(20) NOT NULL,
     nFilm int NOT NULL
 );
 
 CREATE TABLE PRODUZIONE (
-    ID_Produzione varchar(10) PRIMARY KEY,
+    ID_Produzione int(3) unsigned zero fill auto-increment PRIMARY KEY,
     nome varchar(15) NOT NULL,
     nomePresidente varchar(10) NOT NULL
 );
@@ -20,7 +20,7 @@ CREATE TABLE TIPO_ABBONAMENTO (
     ID_TipoAbbonamento varchar(10) PRIMARY KEY,
     nome varchar(15) NOT NULL,
     costo float NOT NULL,
-    qualita int NOT NULL,
+    qualita enum('480', '720', '1080', '2160') NOT NULL,
     nAcc int NOT NULL,
     durata int NOT NULL
 );
