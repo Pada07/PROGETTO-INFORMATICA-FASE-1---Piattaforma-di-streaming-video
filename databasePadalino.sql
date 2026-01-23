@@ -17,7 +17,7 @@ CREATE TABLE PRODUZIONE (
 );
 
 CREATE TABLE TIPO_ABBONAMENTO (
-    ID_TipoAbbonamento varchar(10) PRIMARY KEY,
+    ID_TipoAbbonamento int(4) unsigned zero fill auto-increment PRIMARY KEY,
     nome varchar(15) NOT NULL,
     costo float NOT NULL,
     qualita enum('480', '720', '1080', '2160') NOT NULL,
