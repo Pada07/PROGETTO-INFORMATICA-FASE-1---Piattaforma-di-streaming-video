@@ -91,7 +91,7 @@ erDiagram
         varchar nome
     }
 
-    CONTENUTO }|--|{ GENERE : appartiene 
+    CONTENUTO |}-o{ GENERE : appartiene 
 
     PERSONA {
         varchar ID_Persona PK
@@ -106,8 +106,8 @@ erDiagram
         varchar nomePresidente
     }
 
-    CONTENUTO }|--|{ PERSONA : cast_regia
-    CONTENUTO }|--|{ PRODUZIONE : prodotto_da
+    CONTENUTO o}--|{ PERSONA : cast_regia
+    CONTENUTO |}--o{ PRODUZIONE : prodotto_da
 
     RECENSIONE {
         varchar ID_Recensione PK
@@ -116,9 +116,9 @@ erDiagram
         int voto
     }
 
-    TIPO_ABBONAMENTO ||--o{ ABBONAMENTO : definisce
-    ABBONAMENTO ||--o{ UTENTE : sottoscritto
-    UTENTE ||--o{ ACCOUNT : possiede
+    TIPO_ABBONAMENTO o}--|| ABBONAMENTO : definisce
+    ABBONAMENTO o}--o| UTENTE : sottoscritto
+    UTENTE o}--|| ACCOUNT : possiede
 
     LISTA {
         varchar ID_Lista PK
@@ -134,12 +134,12 @@ erDiagram
         int minuto
     }
 
-    UTENTE ||--o{ RECENSIONE : scrive
-    CONTENUTO ||--o{ RECENSIONE : valutato
-    ACCOUNT ||--o{ LISTA : gestisce
-    CONTENUTO ||--o{ LISTA : salvato
-    ACCOUNT ||--o{ PONTEVISIONA : guarda
-    CONTENUTO ||--o{ PONTEVISIONA : visualizzato
+    UTENTE o}--|| RECENSIONE : scrive
+    CONTENUTO o}--o{ RECENSIONE : valutato
+    ACCOUNT |}--|{ LISTA : gestisce
+    CONTENUTO o}--o{ LISTA : salvato
+    ACCOUNT o}--o{ PONTEVISIONA : guarda
+    CONTENUTO o|--o{ PONTEVISIONA : visualizzato
 ```
 
 ## 4. Schema Logico Relazionale
@@ -472,6 +472,7 @@ La tabella `LISTA` collegano direttamente l'`ACCOUNT` al `CONTENUTO`. Questa sce
 
 ## 7. Conclusioni
 In conclusione abbiamo ottenuto la realizzazione completa del diagramma E-R, schema logico e script sql con le relative spiegazioni ed analisi. Nel futuro si potrebbe allargare il concetto del progetto ad una realizzazione finale dell'applicazione web inizialmente idealizzata.
+
 
 
 
