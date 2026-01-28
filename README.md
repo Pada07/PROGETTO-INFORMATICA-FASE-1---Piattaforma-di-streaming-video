@@ -116,9 +116,9 @@ erDiagram
         int voto
     }
 
-    TIPO_ABBONAMENTO ||--|{ ABBONAMENTO : definisce
-    ABBONAMENTO ||--|{ UTENTE : sottoscritto
-    UTENTE ||--|{ ACCOUNT : possiede
+    TIPO_ABBONAMENTO ||--o{ ABBONAMENTO : definisce
+    ABBONAMENTO ||--o{ UTENTE : sottoscritto
+    UTENTE ||--o{ ACCOUNT : possiede
 
     LISTA {
         varchar ID_Lista PK
@@ -134,10 +134,10 @@ erDiagram
         int minuto
     }
 
-    UTENTE ||--|{ RECENSIONE : scrive
-    CONTENUTO ||--|{ RECENSIONE : valutato
-    ACCOUNT ||--|{ LISTA : gestisce
-    CONTENUTO ||--|{ LISTA : salvato
+    UTENTE ||--o{ RECENSIONE : scrive
+    CONTENUTO ||--o{ RECENSIONE : valutato
+    ACCOUNT ||--o{ LISTA : gestisce
+    CONTENUTO ||--o{ LISTA : salvato
     ACCOUNT ||--o{ PONTEVISIONA : guarda
     CONTENUTO ||--o{ PONTEVISIONA : visualizzato
 ```
@@ -472,6 +472,7 @@ La tabella `LISTA` collegano direttamente l'`ACCOUNT` al `CONTENUTO`. Questa sce
 
 ## 7. Conclusioni
 In conclusione abbiamo ottenuto la realizzazione completa del diagramma E-R, schema logico e script sql con le relative spiegazioni ed analisi. Nel futuro si potrebbe allargare il concetto del progetto ad una realizzazione finale dell'applicazione web inizialmente idealizzata.
+
 
 
 
