@@ -117,7 +117,7 @@ erDiagram
     }
 
     TIPO_ABBONAMENTO o}--|| ABBONAMENTO : definisce
-    ABBONAMENTO o}--o| UTENTE : sottoscritto
+    ABBONAMENTO o}--o{ UTENTE : sottoscritto
     UTENTE o}--|| ACCOUNT : possiede
 
     LISTA {
@@ -472,6 +472,7 @@ La tabella `LISTA` collegano direttamente l'`ACCOUNT` al `CONTENUTO`. Questa sce
 
 ## 7. Conclusioni
 In conclusione abbiamo ottenuto la realizzazione completa del diagramma E-R, schema logico e script sql con le relative spiegazioni ed analisi. Nel futuro si potrebbe allargare il concetto del progetto ad una realizzazione finale dell'applicazione web inizialmente idealizzata.
+
 
 
 
